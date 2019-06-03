@@ -1,4 +1,4 @@
-package com.judy.DesignPattern.factory;
+package com.judy.DesignPattern.simplefactory;
 
 /**
  * @Author: judy
@@ -8,6 +8,7 @@ package com.judy.DesignPattern.factory;
 public class FactoryMainTest {
     public static void main(String[] args){
         AppleFactory appleImplement = new AppleFactory();
-        appleImplement.createInstance("apple1");
+        AppleInterface apple1 = appleImplement.createInstance("apple1");
+        apple1.AppleMethod();
     }
 }

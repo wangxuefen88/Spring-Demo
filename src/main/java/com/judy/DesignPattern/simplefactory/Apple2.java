@@ -1,4 +1,4 @@
-package com.judy.DesignPattern.factory;
+package com.judy.DesignPattern.simplefactory;
 
 /**
  * @Author: judy

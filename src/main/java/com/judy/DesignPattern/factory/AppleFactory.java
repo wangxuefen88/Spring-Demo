@@ -2,20 +2,9 @@ package com.judy.DesignPattern.factory;
 
 /**
  * @Author: judy
- * @Description:
- * @Date: Created in 15:43 2019/5/25
+ * @Description: 生产工厂接口
+ * @Date: Created in 9:12 2019/6/3
  */
-public class AppleFactory {
-
-  public void createInstance(String name){
-      if (name.equals("apple1")){
-          new Apple1().AppleMethod();
-      }
-      if (name.equals("apple2")){
-          new Apple2().AppleMethod();
-      }
-      if (name.equals("apple3")){
-          new Apple3().AppleMethod();
-      }
-  }
+public interface AppleFactory {
+    Apple CreateFactory();
 }
