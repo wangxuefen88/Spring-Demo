@@ -1,8 +1,7 @@
-package com.judy.DesignPattern.singleton.register;
+package com.judy.designpattern.singleton.register;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executors;
 
 /**
  * @Author: judy
