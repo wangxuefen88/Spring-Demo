@@ -19,7 +19,15 @@ public class JdkFangZiJudy implements InvocationHandler {
         return null;
     }
 
-    // 1
+
+
+    /**
+     *  1 为什么要传 classloader
+     *  2 为什么要传接口
+     *  3 为什么要传InvocationHandler
+     * @param target
+     * @return
+     */
     public Object getInstance(Person target) {
         this.target = target;
         Object o = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);

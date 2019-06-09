@@ -1,5 +1,11 @@
 package com.judy.designpattern.jdkproxy;
 
+import sun.misc.ProxyGenerator;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * @Author: judy
  * @Description:
@@ -16,12 +22,18 @@ public class JdkTest {
      * 6 以上就是字节码重组
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Person person = (Person) new JdkFangZiJudy().getInstance(new judy());
         person.findWork();
-        Person person1 = (Person) new JdkBoyFriendJudy().getInstance(new judy());
-        person1.findBodyFriend();
+//        Person person1 = (Person) new JdkBoyFriendJudy().getInstance(new judy());
+//        person1.findBodyFriend();
+
+
+        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{Person.class});
+        FileOutputStream outputStream = new FileOutputStream("E://$Proxy0.class");
+        outputStream.write(bytes);
+        outputStream.close();
     }
 
 }
